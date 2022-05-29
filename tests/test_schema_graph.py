@@ -1,8 +1,9 @@
 import pydot
 import pytest
-import sqlalchemy_schemadisplay as sasd
 from sqlalchemy import Column, ForeignKey, MetaData, Table, types
 from utils import parse_graph
+
+import biogram as sasd
 
 
 @pytest.fixture

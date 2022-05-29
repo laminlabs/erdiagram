@@ -1,9 +1,10 @@
 import pytest
-import sqlalchemy_schemadisplay as sasd
 from sqlalchemy import Column, ForeignKey, MetaData, types
 from sqlalchemy.ext.declarative import declarative_base
 from sqlalchemy.orm import class_mapper, relationship
 from utils import parse_graph
+
+import biogram as sasd
 
 
 @pytest.fixture
