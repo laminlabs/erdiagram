@@ -10,6 +10,7 @@ dynamic = ["version", "description"]
 dependencies = [
     "nbproject",
     "pydot",
+    "sqlalchemy",
 ]
 
 [project.urls]
