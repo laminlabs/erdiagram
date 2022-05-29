@@ -1,0 +1,5 @@
+project_name: Biogram
+description: Make diagrams for biological entities
+project_slug: biogram
+repository_name: biogram
+package_name: biogram
