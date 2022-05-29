@@ -1,3 +1,10 @@
+"""Draw diagrams for SQLAlchemy.
+
+This is a re-formatted version of `sqlalchemy_schemadisplay`, which is MIT licensed.
+
+The original source code & copyright is available from the link below:
+https://github.com/fschulze/sqlalchemy_schemadisplay
+"""
 import types
 
 import pydot
