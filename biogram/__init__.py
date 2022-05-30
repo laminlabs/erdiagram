@@ -13,7 +13,7 @@ This is the complete API reference:
    view
 """
 
-__version__ = "0.0.1"
+__version__ = "0.0.2"
 
 from ._sqlalchemy import create_schema_graph, create_uml_graph  # noqa
 from ._utils import view
