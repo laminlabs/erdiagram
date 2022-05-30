@@ -437,8 +437,8 @@ def create_schema_graph(
             if is_inheritance:
                 edge = edge[::-1]
             graph_edge = pydot.Edge(
-                headlabel="+ %s" % fk.column.name,
-                taillabel="+ %s" % fk.parent.name,
+                headlabel=" ",  # fk.column.name,
+                taillabel=" ",  # fk.parent.name,
                 arrowhead=is_inheritance and "none" or "odot",
                 arrowtail=(fk.parent.primary_key or fk.parent.unique)
                 and "empty"
