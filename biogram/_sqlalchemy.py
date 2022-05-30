@@ -275,7 +275,7 @@ def _render_table_html(
 
     # Assemble table header
     html = (
-        '<<TABLE BORDER="1" CELLBORDER="0" CELLSPACING="0"><TR><TD'
+        '<<TABLE BORDER="1" CELLBORDER="0" CELLSPACING="0" STYLE="ROUNDED"><TR><TD'
         ' ALIGN="CENTER"><b>%s%s%s</b></TD></TR>'
         % (schema_str, "." if show_schema_name else "", table_str)
     )
