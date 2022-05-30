@@ -281,8 +281,12 @@ def _render_table_html(
     )
 
     html += "".join(
-        '<TR><TD ALIGN="LEFT" PORT="%s">%s</TD></TR>' % (col.name, format_col_str(col))
-        for col in table.columns
+        [
+            '<TR><TD ALIGN="LEFT" PORT="%s">%s</TD></TR>'
+            % (col.name, format_col_str(col))
+            for col in table.columns
+            if col.name not in {"index", "id"}
+        ]
     )
     if metadata.bind and isinstance(metadata.bind.dialect, PGDialect):
         # postgres engine doesn't reflect indexes
