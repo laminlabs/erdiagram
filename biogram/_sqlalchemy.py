@@ -439,10 +439,8 @@ def create_schema_graph(
             graph_edge = pydot.Edge(
                 headlabel=" ",  # fk.column.name,
                 taillabel=" ",  # fk.parent.name,
-                arrowhead=is_inheritance and "none" or "odot",
-                arrowtail=(fk.parent.primary_key or fk.parent.unique)
-                and "empty"
-                or "crow",
+                arrowhead=" ",  # is_inheritance and "none" or "odot",
+                arrowtail=" ",  # (fk.parent.primary_key or fk.parent.unique)...,
                 fontname=font,
                 # samehead=fk.column.name, sametail=fk.parent.name,
                 *edge,
