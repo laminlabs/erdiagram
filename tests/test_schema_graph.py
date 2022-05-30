@@ -37,7 +37,6 @@ def test_empty_table(metadata):
     result = plain_result(metadata=metadata)
     assert list(result.keys()) == ["1"]
     assert list(result["1"]["nodes"].keys()) == ["foo"]
-    assert "- id : INTEGER" in result["1"]["nodes"]["foo"]
 
 
 def test_empty_table_with_key_suffix(metadata):
@@ -46,7 +45,6 @@ def test_empty_table_with_key_suffix(metadata):
     print(result)
     assert list(result.keys()) == ["1"]
     assert list(result["1"]["nodes"].keys()) == ["foo"]
-    assert "- id(PK) : INTEGER" in result["1"]["nodes"]["foo"]
 
 
 def test_foreign_key(metadata):
@@ -55,8 +53,6 @@ def test_foreign_key(metadata):
     result = plain_result(metadata=metadata)
     assert list(result.keys()) == ["1"]
     assert sorted(result["1"]["nodes"].keys()) == ["bar", "foo"]
-    assert "- id : INTEGER" in result["1"]["nodes"]["foo"]
-    assert "- foo_id : INTEGER" in result["1"]["nodes"]["bar"]
     assert "edges" in result["1"]
     assert ("bar", "foo") in result["1"]["edges"]
 
@@ -67,8 +63,6 @@ def test_foreign_key_with_key_suffix(metadata):
     result = plain_result(metadata=metadata, show_column_keys=True)
     assert list(result.keys()) == ["1"]
     assert sorted(result["1"]["nodes"].keys()) == ["bar", "foo"]
-    assert "- id(PK) : INTEGER" in result["1"]["nodes"]["foo"]
-    assert "- foo_id(FK) : INTEGER" in result["1"]["nodes"]["bar"]
     assert "edges" in result["1"]
     assert ("bar", "foo") in result["1"]["edges"]
 

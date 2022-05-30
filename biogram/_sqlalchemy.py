@@ -275,14 +275,18 @@ def _render_table_html(
 
     # Assemble table header
     html = (
-        '<<TABLE BORDER="1" CELLBORDER="0" CELLSPACING="0"><TR><TD'
+        '<<TABLE BORDER="1" CELLBORDER="0" CELLSPACING="0" STYLE="ROUNDED"><TR><TD'
         ' ALIGN="CENTER"><b>%s%s%s</b></TD></TR>'
         % (schema_str, "." if show_schema_name else "", table_str)
     )
 
     html += "".join(
-        '<TR><TD ALIGN="LEFT" PORT="%s">%s</TD></TR>' % (col.name, format_col_str(col))
-        for col in table.columns
+        [
+            '<TR><TD ALIGN="LEFT" PORT="%s">%s</TD></TR>'
+            % (col.name, format_col_str(col))
+            for col in table.columns
+            if col.name not in {"index", "id"}
+        ]
     )
     if metadata.bind and isinstance(metadata.bind.dialect, PGDialect):
         # postgres engine doesn't reflect indexes
@@ -310,7 +314,6 @@ def create_schema_graph(
     metadata=None,
     show_indexes=True,
     show_datatypes=True,
-    font="Bitstream-Vera Sans",
     concentrate=True,
     relation_options={},
     rankdir="TB",
@@ -348,7 +351,6 @@ def create_schema_graph(
         format_table_name (dict, default=None): If provided, allowed keys include:
             'color' (hex color code incl #), 'fontsize' as a float,
             and 'bold' and 'italics' as bools.
-        font: Font.
         show_datatypes: Show data types.
         show_indexes: Show indexes.
         tables: Which tables to include.
@@ -423,7 +425,7 @@ def create_schema_graph(
                     format_schema_name,
                     format_table_name,
                 ),
-                fontname=font,
+                fontname="Helvetica",
                 fontsize="7.0",
             )
         )
@@ -441,7 +443,7 @@ def create_schema_graph(
                 taillabel=" ",  # fk.parent.name,
                 arrowhead=" ",  # is_inheritance and "none" or "odot",
                 arrowtail=" ",  # (fk.parent.primary_key or fk.parent.unique)...,
-                fontname=font,
+                fontname="Helvetica",
                 # samehead=fk.column.name, sametail=fk.parent.name,
                 *edge,
                 **relation_kwargs
