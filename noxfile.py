@@ -17,9 +17,11 @@ def build(session):
     session.install(".[dev,test]")
     session.run(
         "pytest",
-        "--nbmake",
-        "--overwrite",
-    )  # write output instead of capturing it (more verbose)
+        "-s",
+        "--cov=biogram",
+        "--cov-append",
+        "--cov-report=term-missing",
+    )
     session.run("coverage", "xml")
     prefix = "." if Path("./lndocs").exists() else ".."
     session.install(f"{prefix}/lndocs")
