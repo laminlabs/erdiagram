@@ -410,7 +410,6 @@ def create_schema_graph(
         restrict_tables = set([t.lower() for t in restrict_tables])
     tables = [t for t in tables if t.name.lower() in restrict_tables]
     for table in tables:
-
         graph.add_node(
             pydot.Node(
                 str(table.name),
