@@ -1,5 +1,5 @@
 project_name: Biogram
-description: Make diagrams for biological entities
+description: Entity relationship diagrams for biology
 project_slug: biogram
 repository_name: biogram
 package_name: biogram
