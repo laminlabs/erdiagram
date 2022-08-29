@@ -1,3 +1,3 @@
-# Biogram: Entity relationship diagrams for biology
+# ERdiagram: Entity relationship diagrams for SQLalchemy
 
-Read the [docs](https://lamin.ai/docs/biogram).
+Read the [docs](https://lamin.ai/docs/db).

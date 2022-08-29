@@ -2,7 +2,7 @@
 
 Import the package::
 
-   import biogram
+   import erdiagram
 
 This is the complete API reference:
 

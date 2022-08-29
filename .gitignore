@@ -102,7 +102,7 @@ ENV/
 
 # Lamin
 _build
-docs/biogram.*
+docs/erdiagram.*
 lamin_sphinx
 docs/conf.py
 _docs_tmp*

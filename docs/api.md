@@ -1,5 +1,5 @@
 # API
 
 ```{eval-rst}
-.. automodule:: biogram
+.. automodule:: erdiagram
 ```
