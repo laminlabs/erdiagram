@@ -18,7 +18,7 @@ def build(session):
     session.run(
         "pytest",
         "-s",
-        "--cov=biogram",
+        "--cov=erdiagram",
         "--cov-append",
         "--cov-report=term-missing",
     )

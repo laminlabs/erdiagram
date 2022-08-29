@@ -3,7 +3,7 @@ import pytest
 from sqlalchemy import Column, ForeignKey, MetaData, Table, types
 from utils import parse_graph
 
-import biogram as sasd
+import erdiagram as sasd
 
 
 @pytest.fixture

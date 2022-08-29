@@ -4,7 +4,7 @@ from sqlalchemy.ext.declarative import declarative_base
 from sqlalchemy.orm import class_mapper, relationship
 from utils import parse_graph
 
-import biogram as sasd
+import erdiagram as sasd
 
 
 @pytest.fixture
