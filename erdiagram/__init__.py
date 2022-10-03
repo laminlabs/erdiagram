@@ -1,6 +1,6 @@
 """Make diagrams for SQLAlchemy.
 
-Heavily based on the MIT-licensed https://github.com/fschulze/sqlalchemy_schemadisplay!
+The underlying code is heavily based on the MIT-licensed https://github.com/fschulze/sqlalchemy_schemadisplay and contains its copyright notice!
 
 Import the package::
 
