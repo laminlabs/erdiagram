@@ -290,15 +290,17 @@ def _render_table_html(
     )
     if metadata.bind and isinstance(metadata.bind.dialect, PGDialect):
         # postgres engine doesn't reflect indexes
-        indexes = dict(
-            (name, defin)
-            for name, defin in metadata.bind.execute(
-                text(
-                    "SELECT indexname, indexdef FROM pg_indexes WHERE tablename = '%s'"
-                    % table.name
+        with metadata.bind.connect() as connection:
+            indexes = dict(
+                (name, defin)
+                for name, defin in connection.execute(
+                    text(
+                        "SELECT indexname, indexdef FROM pg_indexes WHERE tablename ="
+                        " '%s'"
+                        % table.name
+                    )
                 )
             )
-        )
         if indexes and show_indexes:
             html += '<TR><TD BORDER="1" CELLPADDING="0"></TD></TR>'
             for index, defin in indexes.items():
