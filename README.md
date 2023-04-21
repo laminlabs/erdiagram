@@ -1,3 +1,3 @@
 # ERdiagram: Entity relationship diagrams for SQLalchemy
 
-Read the [docs](https://lamin.ai/docs/db).
+This package is heavily based on: https://github.com/fschulze/sqlalchemy_schemadisplay.
