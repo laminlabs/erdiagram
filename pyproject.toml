@@ -9,7 +9,7 @@ readme = "README.md"
 dynamic = ["version", "description"]
 dependencies = [
     "pydot",
-    "sqlalchemy",
+    "sqlalchemy<2.0",
 ]
 
 [project.urls]
